@@ -27,4 +27,9 @@ public class UserService {
 	public List<User> findAllUsers() {
 		return (List<User>)userRepository.findAll();
 	}
+	
+	@PostMapping("/login")
+	public User login(@RequestBody User user) {
+		return userRepository.findUserByCredentials(user.getUsername(), user.getPassword());
+	}
 }
