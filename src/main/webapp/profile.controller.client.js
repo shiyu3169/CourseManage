@@ -1,10 +1,21 @@
 (()=> {
 	init();
 
+	var $username, $firstName, $lastName;
+
 	function init() {
-		findUserById(7).then((user) => {
-			console.log(user);
-		});
+
+		$username = $('#username');
+		$firstName = $('#firstName');
+		$lastName = $('#lastName');
+
+		findUserById(7).then(renderUser);
+	}
+
+	function renderUser(user) {
+		$username.val(user.username);
+		$firstName.val(user.firstName);
+		$lastName.val(user.lastName);
 	}
 
 	function findUserById(userId) {
