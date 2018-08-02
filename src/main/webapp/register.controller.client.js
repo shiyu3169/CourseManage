@@ -16,15 +16,14 @@
 		
 		var userStr = JSON.stringify(user);
 		
-		var promise = fetch('/register', {
+		fetch('/register', {
 			method: "post",
 			body: userStr,
 			headers: {
 				'Content-Type': 'application/json'
-			}
-		})
-
-		promise.then(registrationSuccessful, registrationFailed);
+			},
+			'credentials': 'include'
+		}).then(registrationSuccessful, registrationFailed);
 
 		function registrationSuccessful() {
 			window.location.href = '/profile.template.client.html';

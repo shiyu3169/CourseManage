@@ -22,7 +22,7 @@
 			headers: {
 				'Content-Type': 'application/json'
 			}
-		}).then(()=>{
+		}).then((data)=>{
 			window.location.href= "/profile.template.client.html";
 		});
 	}
