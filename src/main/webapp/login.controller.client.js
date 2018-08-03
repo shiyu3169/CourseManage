@@ -19,10 +19,11 @@
 		fetch('/login', {
 			method: 'post',
 			body: JSON.stringify(user),
+			'credentials': 'include',
 			headers: {
 				'Content-Type': 'application/json'
 			}
-		}).then((data)=>{
+		}).then(()=>{
 			window.location.href= "/profile.template.client.html";
 		});
 	}
